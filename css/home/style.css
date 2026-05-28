@@ -1,0 +1,70 @@
+* {
+  font-family: "Grenze Gotisch", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../../images/background_cropped.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(255, 232, 168);
+  gap: 15px;
+}
+
+h1 {
+  color: crimson;
+  margin-left: 15px;
+  font-size: 46px;
+}
+
+.div1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.img1 {
+  display: block;
+}
+
+.maintext {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(168, 15, 46);
+  text-shadow: 0 0 8px rgba(255, 220, 150, 0.9), 0 0 16px rgba(255, 200, 100, 0.6);
+}
+
+.buttons {
+  position: absolute;
+  font-size: 32px;
+  text-decoration: none;
+  color: rgb(168, 15, 46);
+  text-shadow: 0 0 8px rgba(255, 220, 150, 0.9), 0 0 16px rgba(255, 200, 100, 0.6);
+  transition: 0.2s;
+}
+.buttons:first-of-type {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.buttons:last-of-type {
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.buttons:hover {
+  scale: 1.1;
+}/*# sourceMappingURL=style.css.map */
