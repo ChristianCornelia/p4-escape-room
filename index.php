@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <style>
     body {
-      background-image: url("images/background.png");
+      background-image: url("images/background_cropped.png");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100% 100%;
