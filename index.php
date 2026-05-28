@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room</title>
   <link rel="stylesheet" href="./css/style.css">
+  
 </head>
 
 <body>
-
+  <img src="images/Desktop - 1.png">
   <h1>Welkom</h1>
   <p>De button hieronder is alleen voor testdoeleinden bij het opstarten van het project. Deze pagina is bedoeld voor de
     uitleg van jullie escape room.</p>
