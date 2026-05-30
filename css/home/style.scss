@@ -100,3 +100,13 @@ h1 {
   @extend %button-base;
   top: 65%;
 }
+.helptext {
+  @extend %button-base;
+  top: 50%;
+  font-size: 30px;
+  text-shadow: 0 0 10px rgb(255, 229, 176),
+               0 0 20px rgba(255, 222, 161,);
+  &:hover {
+    scale: 1;
+  }
+}
