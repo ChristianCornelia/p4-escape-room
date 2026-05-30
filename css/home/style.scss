@@ -13,18 +13,36 @@ $crimson: rgb(168, 15, 46);
   padding:0;
   box-sizing:border-box;
 }
+
 body {
   background-image: url("../../images/background_cropped.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
+
 nav {
   @include flex(left, center);
   height: 80px;
   background-color: rgb(255, 232, 168);
   gap: 15px;
 }
+
+.login-btn {
+  margin-left: auto;
+  margin-right: 15px;
+  color: crimson;
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid crimson;
+  padding: 6px 16px;
+  transition: 0.1s;
+  &:hover {
+    background-color: crimson;
+    color: rgb(255, 232, 168);
+  }
+}
+
 h1 {
   color: crimson;
   margin-left: 15px;
@@ -72,8 +90,3 @@ h1 {
   }
 }
 
-.login {
-  font-size: 32px;
-  margin-left: auto;
-  color: $crimson;
-}

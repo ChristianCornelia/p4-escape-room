@@ -21,6 +21,21 @@ nav {
   gap: 15px;
 }
 
+.login-btn {
+  margin-left: auto;
+  margin-right: 15px;
+  color: crimson;
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid crimson;
+  padding: 6px 16px;
+  transition: 0.1s;
+}
+.login-btn:hover {
+  background-color: crimson;
+  color: rgb(255, 232, 168);
+}
+
 h1 {
   color: crimson;
   margin-left: 15px;

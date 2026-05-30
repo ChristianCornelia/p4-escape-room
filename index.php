@@ -11,7 +11,7 @@
 <body>
 <nav>
   <h1>Devil's Acre</h1>
-  <a class="login">Log in</a>
+  <a href="./login.php" class="login-btn">Login</a>
 </nav>
 
   <div class="div1">
