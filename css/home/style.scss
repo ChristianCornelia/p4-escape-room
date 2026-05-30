@@ -6,6 +6,11 @@ $crimson: rgb(168, 15, 46);
   justify-content:$justify;
   align-items:$align;
 }
+@mixin inlineflex($justify, $align){
+  display:inline-flex;
+  justify-content:$justify;
+  align-items:$align;
+}
 
 *{
   font-family: "Grenze Gotisch", serif;
@@ -29,17 +34,23 @@ nav {
 }
 
 .login-btn {
-  margin-left: auto;
   margin-right: 15px;
   color: crimson;
   text-decoration: none;
   font-size: 24px;
   border: 2px solid crimson;
   padding: 6px 16px;
+  width: 100px;
+  height: 45px;
+  @include inlineflex(center, center);
   transition: 0.1s;
   &:hover {
     background-color: crimson;
     color: rgb(255, 232, 168);
+  }
+  &:first-of-type {
+    margin-left: auto;
+    margin-right: 0px;
   }
 }
 
@@ -67,7 +78,7 @@ h1 {
                0 0 16px rgba(255, 200, 100, 0.6);
 }
 
-.buttons {
+%button-base {
   position: absolute;
   font-size: 32px;
   text-decoration: none;
@@ -75,18 +86,17 @@ h1 {
   text-shadow: 0 0 8px rgba(255, 220, 150, 0.9),
                0 0 16px rgba(255, 200, 100, 0.6);
   transition: 0.2s;
-  &:first-of-type {
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &:last-of-type {
-    top: 65%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  left: 50%;
+  transform: translateX(-50%);
   &:hover {
     scale: 1.1;
   }
 }
-
+.room1 {
+  @extend %button-base;
+  top: 50%;
+}
+.room2 {
+  @extend %button-base;
+  top: 65%;
+}

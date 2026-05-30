@@ -22,18 +22,26 @@ nav {
 }
 
 .login-btn {
-  margin-left: auto;
   margin-right: 15px;
   color: crimson;
   text-decoration: none;
   font-size: 24px;
   border: 2px solid crimson;
   padding: 6px 16px;
+  width: 100px;
+  height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.1s;
 }
 .login-btn:hover {
   background-color: crimson;
   color: rgb(255, 232, 168);
+}
+.login-btn:first-of-type {
+  margin-left: auto;
+  margin-right: 0px;
 }
 
 h1 {
@@ -62,24 +70,24 @@ h1 {
   text-shadow: 0 0 8px rgba(255, 220, 150, 0.9), 0 0 16px rgba(255, 200, 100, 0.6);
 }
 
-.buttons {
+.room2, .room1 {
   position: absolute;
   font-size: 32px;
   text-decoration: none;
   color: rgb(168, 15, 46);
   text-shadow: 0 0 8px rgba(255, 220, 150, 0.9), 0 0 16px rgba(255, 200, 100, 0.6);
   transition: 0.2s;
-}
-.buttons:first-of-type {
-  top: 50%;
   left: 50%;
   transform: translateX(-50%);
 }
-.buttons:last-of-type {
-  top: 65%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.buttons:hover {
+.room2:hover, .room1:hover {
   scale: 1.1;
+}
+
+.room1 {
+  top: 50%;
+}
+
+.room2 {
+  top: 65%;
 }/*# sourceMappingURL=style.css.map */

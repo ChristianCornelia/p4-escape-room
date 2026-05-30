@@ -11,14 +11,15 @@
 <body>
 <nav>
   <h1>Devil's Acre</h1>
+  <a href="./help.php" class="login-btn">Help</a>
   <a href="./login.php" class="login-btn">Login</a>
 </nav>
 
   <div class="div1">
     <img src="images/parchment.png" class="img1">
     <h1 class="maintext">Welcome to Devil's Acre, the most dangerous slum in 1800s London...</h1>
-    <a href="./rooms/room_1.php" class="buttons">Enter ye...</a>
-    <a href="./rooms/room_2.php" class="buttons">Enter ye...</a>
+    <a href="./rooms/room_1.php" class="room1">Enter ye...</a>
+    <a href="./rooms/room_2.php" class="room2">Enter ye...</a>
   </div>
 
   
