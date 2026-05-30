@@ -11,6 +11,7 @@
 <body>
 <nav>
   <h1>Devil's Acre</h1>
+  <a class="login">Log in</a>
 </nav>
 
   <div class="div1">
