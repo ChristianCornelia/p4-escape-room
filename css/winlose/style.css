@@ -1,0 +1,76 @@
+* {
+  font-family: "Grenze Gotisch", serif;
+  margin: 0;
+  padding: 0;
+}
+
+.win {
+  background-image: url("../../images/bgwin.png");
+}
+
+.lose {
+  background-image: url("../../images/bglose.png");
+}
+
+nav {
+  height: 80px;
+  background-color: rgb(255, 232, 168);
+  color: rgb(245, 0, 0);
+  text-shadow: 2px 5px #c20000;
+}
+
+.cross {
+  display: flex;
+    height: 600px;
+    width: 1000px;
+  opacity: 0.3;
+
+}
+
+.blood {
+  display: flex;
+  position: absolute;
+  height: 200px;
+  width: 1390px;
+  margin-bottom: 60vh;
+}
+
+.winscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  font-size: 60px;
+  margin-bottom: 40vh;
+}
+
+.losetext {
+  position: absolute;
+  font-size: 60px;
+  margin-bottom: 40vh;
+  color: rgb(255, 192, 192)
+}
+
+
+.toscore {
+  position: absolute;
+  margin-top: 50vh;
+}
+
+button {
+  font-size: 30px;
+  background-color: red;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 40px;
+}
+
+button:hover {
+  transition: transform 0.2s;
+  transform: scale(1.05);
+}
