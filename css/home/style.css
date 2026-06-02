@@ -59,6 +59,7 @@ h1 {
 
 .img1 {
   display: block;
+  filter: brightness(1);
 }
 
 .maintext {
@@ -96,6 +97,7 @@ h1 {
   top: 50%;
   font-size: 30px;
   text-shadow: 0 0 10px rgb(255, 229, 176), 0 0 20px rgb(255, 222, 161);
+  text-align: center;
 }
 .helptext:hover {
   scale: 1;
