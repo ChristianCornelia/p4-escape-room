@@ -20,7 +20,6 @@ try {
 </head>
 
 <body>
-  <h1>Team: ...</h1>
 
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
