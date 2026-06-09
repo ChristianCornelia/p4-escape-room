@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2026 at 02:52 PM
+-- Generation Time: Jun 09, 2026 at 06:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `riddles` (
   `id` int(11) NOT NULL,
-  `riddle` varchar(255) NOT NULL,
+  `riddle` varchar(512) NOT NULL,
   `answer` varchar(100) NOT NULL,
   `hint` varchar(255) DEFAULT NULL,
   `roomId` int(11) NOT NULL
@@ -43,9 +43,12 @@ INSERT INTO `riddles` (`id`, `riddle`, `answer`, `hint`, `roomId`) VALUES
 (10, 'Ik ben doodstil, tot het te laat is! Wie ben ik?', 'Creeper', 'Hij is lichtgroen van kleur', 1),
 (11, 'Wat is het eerste wat een speler doet bij het maken van een minecraft wereld?', 'Boom hakken', 'hoe krijg je hout?', 1),
 (12, 'Welke minecraft biome heeft de hoogste bomen?', 'Jungle', 'Hier vind je de parrot en de ocelot!', 1),
-(15, 'Ik ben de populairste vocaloid, wie ben ik?', 'Hatsune Miku', 'Ze heeft blauw haar', 2),
-(16, 'Ik ben de enige vocaloid met een vrouwelijke \"mirror image\"! Wie ben ik?', 'Kagamine Len', 'De mirror image van Ren met blond haar', 2),
-(17, 'Ik ben de langste vocaloid, 180cm lang! Wie ben ik?', 'Camui Gakpo', 'Ze heeft paars haar\r\n', 2);
+(15, 'Je liep op straat, maar voelde opeens pijn op je hoofd en viel flauw. Je wordt wakker in de kelder van het hoofdkwartier van de mafia. De deur heeft geen handel, alleen een sleutelgat.\r\nJe ziet 3 dingen op de grond: \r\n1 Een sleutel\r\n2 Een hotelkaart\r\n3 Een crowbar\r\n', 'De hotelkaart', 'De deur heeft geen handel, maar is niet op slot...', 2),
+(16, 'Je glijdt de hotelkaart langs de deur grendel en krijgt de deur open. Je komt in een donkere gang terecht. Aan het einde zie je een bewaker die in slaap is gevallen. Op zijn riem hangen 3 dingen:\r\n1 Een pistool\r\n2 Een fluitje\r\n3 Een radio', 'radio', '', 2),
+(17, 'Je gebruikt de radio en hoort een stem: \"Als je ontsnapt wil, geef het woord dat past: Ik heb honger als een ____\"', 'wolf', '', 2),
+(18, 'Je sluipt door de gang en komt bij een kluis. Er zit een cijferslot op met een hint op een briefje: \"Het aantal letters in de naam van de baas van de mafia is de code. Zijn naam is: Don Salvatore\"', '12', ' ', 2),
+(19, 'De kluis opent en je vindt een dossier vol bewijzen tegen de mafia. Maar je moet kiezen hoe je ontsnap:\r\n1 Door het raam springen\r\n2 De politie bellen met de radio\r\n3 De bewijzen verbranden en vluchten', 'politie', ' ', 2),
+(20, 'De politie is onderweg maar Don Salvatore heeft je gevonden. Hij biedt je een deal aan: \"Geef me het dossier en je mag gaan.\" Wat doe je?\r\n1 Geef hem het dossier\r\n2 Gooi het dossier uit het raam naar de politie\r\n3 Houd het dossier vast en wacht op de politie', 'raam', ' ', 2);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `riddles`
 -- AUTO_INCREMENT for table `riddles`
 --
 ALTER TABLE `riddles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

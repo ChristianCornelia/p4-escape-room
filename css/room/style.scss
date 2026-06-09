@@ -1,0 +1,135 @@
+$crimson: rgb(168, 15, 46);
+
+
+@mixin flex($justify, $align){
+  display:flex;
+  justify-content:$justify;
+  align-items:$align;
+}
+@mixin inlineflex($justify, $align){
+  display:inline-flex;
+  justify-content:$justify;
+  align-items:$align;
+}
+
+* {
+  font-family: "Grenze Gotisch", serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  background-image: url("../../images/background_cropped.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+nav {
+  @include flex(left, center);
+  height: 80px;
+  background-color: rgb(255, 232, 168);
+  gap: 15px;
+}
+
+.login-btn {
+  margin-right: 15px;
+  color: crimson;
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid crimson;
+  padding: 6px 16px;
+  width: 100px;
+  height: 45px;
+  @include inlineflex(center, center);
+  transition: 0.1s;
+  &:hover {
+    background-color: crimson;
+    color: rgb(255, 232, 168);
+  }
+  &:first-of-type {
+    margin-left: auto;
+    margin-right: 0px;
+  }
+}
+
+h1 {
+  color: crimson;
+  margin-left: 15px;
+  font-size: 46px;
+}
+
+.div1 {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.img1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+.parchment-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 100px;
+  max-width: 1000px;
+  width: 60vw;
+  text-align: center;
+}
+
+.maintext {
+  position: relative;
+  color: $crimson;
+  line-height: 1.5;
+  z-index: 1;
+  font-size: 44px;
+  text-shadow: 0 0 8px rgba(255, 220, 150, 0.9),
+               0 0 16px rgba(255, 200, 100, 0.6);
+}
+
+%button-base {
+  position: absolute;
+  font-size: 32px;
+  text-decoration: none;
+  color: $crimson;
+  text-shadow: 0 0 8px rgba(255, 220, 150, 0.9),
+               0 0 16px rgba(255, 200, 100, 0.6);
+  transition: 0.2s;
+  left: 50%;
+  transform: translateX(-50%);
+  &:hover {
+    scale: 1.1;
+  }
+}
+.room1 {
+  @extend %button-base;
+  top: 50%;
+}
+.room2 {
+  @extend %button-base;
+  top: 65%;
+}
+.helptext {
+  @extend %button-base;
+  top: 50%;
+  font-size: 30px;
+  text-shadow: 0 0 10px rgb(255, 229, 176),
+               0 0 20px rgba(255, 222, 161,);
+  text-align: center;
+  &:hover {
+    scale: 1;
+  }
+}
