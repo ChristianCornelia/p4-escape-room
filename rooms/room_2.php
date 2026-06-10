@@ -2,12 +2,10 @@
 session_start();
 require_once('../dbcon.php');
 
-// Start at riddle 0 if not set yet
 if (!isset($_SESSION['current_riddle'])) {
     $_SESSION['current_riddle'] = 0;
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $submitted = strtolower(trim($_POST['answer']));
     $correct   = strtolower(trim($_POST['correct_answer']));
@@ -19,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Fetch all riddles
 $stmt   = $db_connection->query("SELECT * FROM riddles WHERE roomId = 2 ORDER BY id");
 $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $current = $_SESSION['current_riddle'];

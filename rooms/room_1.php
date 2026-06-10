@@ -1,12 +1,25 @@
 <?php
+session_start();
 require_once('../dbcon.php');
 
-try {
-  $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomId = 1");
-  $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-  die("Databasefout: " . $e->getMessage());
+if (!isset($_SESSION['current_riddle'])) {
+    $_SESSION['current_riddle'] = 0;
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $submitted = strtolower(trim($_POST['answer']));
+    $correct   = strtolower(trim($_POST['correct_answer']));
+
+    if ($submitted === $correct) {
+        $_SESSION['current_riddle']++;
+    } else {
+        $feedback = "Wrong answer, try again!";
+    }
+}
+
+$stmt   = $db_connection->query("SELECT * FROM riddles WHERE roomId = 1 ORDER BY id");
+$riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$current = $_SESSION['current_riddle'];
 ?>
 
 <!DOCTYPE html>
@@ -15,33 +28,34 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room 1</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Escape room 2</title>
+  <link rel="stylesheet" href="../css/room/style.scss">
 </head>
 
 <body>
-
-  <div class="container">
-    <?php foreach ($riddles as $index => $riddle) : ?>
-    <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
-      data-index="<?php echo $index; ?>" data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
-      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>">
-      Box <?php echo $index + 1; ?>
+  <div class="div1">
+    <img src="../images/parchment.png" class="img1">
+    <div class="parchment-content">
+      <?php if ($current < count($riddles)) : ?>
+        <p class="maintext"><strong>Riddle <?php echo $current + 1; ?></strong></p>
+        <h1 class="maintext"><?php echo htmlspecialchars($riddles[$current]['riddle']); ?></h1>
+        <?php if (!empty($feedback)) : ?>
+          <p style="color:red"><?php echo $feedback; ?></p>
+        <?php endif; ?>
+        <form method="POST">
+          <input type="hidden" name="correct_answer"
+                value="<?php echo htmlspecialchars($riddles[$current]['answer']); ?>">
+          <input type="text" name="answer" placeholder="Your answer">
+          <button type="submit">Submit</button>
+        </form>
+      <?php else : ?>
+        <p>You solved all the riddles! 🎉</p>
+        <a href="room_2.php">Next room</a>
+        <?php $_SESSION['current_riddle'] = 0; ?>
+      <?php endif; ?>
     </div>
-    <?php endforeach; ?>
   </div>
 
-  <section class="overlay" id="overlay" onclick="closeModal()"></section>
-
-  <section class="modal" id="modal">
-    <h2>Escape Room Vraag</h2>
-    <p id="riddle"></p>
-    <input type="text" id="answer" placeholder="Typ je antwoord">
-    <button onclick="checkAnswer()">Verzenden</button>
-    <p id="feedback"></p>
-  </section>
-
-  <script src="../js/app.js"></script>
 
 </body>
 
