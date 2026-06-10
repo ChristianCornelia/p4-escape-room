@@ -32,7 +32,7 @@ $current = $_SESSION['current_riddle'];
   <link rel="stylesheet" href="../css/room/style.scss">
 </head>
 
-<body>
+<body class="hospital">
   <div class="div1">
     <img src="../images/parchment.png" class="img1">
     <div class="parchment-content">
@@ -49,6 +49,7 @@ $current = $_SESSION['current_riddle'];
           <button type="submit">Submit</button>
         </form>
       <?php else : ?>
+        
         <p>You solved all the riddles! 🎉</p>
         <a href="room_2.php">Next room</a>
         <?php $_SESSION['current_riddle'] = 0; ?>

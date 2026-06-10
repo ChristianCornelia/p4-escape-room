@@ -27,6 +27,14 @@ body {
   text-align: center;
 }
 
+.hospital {
+  background-image: url("../../images/hospital.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
 nav {
   @include flex(left, center);
   height: 80px;
