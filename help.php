@@ -12,8 +12,27 @@
 <nav>
   <h1>Devil's Acre</h1>
   <a href="./index.php" class="login-btn">Home</a>
-  <a href="./login.php" class="login-btn">Login</a>
-</nav>
+  <?php
+
+    session_start();
+
+    $is_admin = false;
+    if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        $is_admin = true;
+    }
+
+    if (!isset($_SESSION['user_id'])) {
+        echo '<a href="./login.php" class="login-btn">Login</a>';
+    } else {
+        echo '  <a href="./account.php" class="login-btn">Mijn account</a>';
+        echo '  <a href="./logout.php" class="login-btn">logout</a>';
+    } if ($is_admin) {
+        echo '  <a href="./beheer.php" class="login-btn">beheer</a>';
+    } 
+
+
+  ?>
+  </nav>
 
   <div class="div1">
     <img src="images/parchment.png" class="img1">
