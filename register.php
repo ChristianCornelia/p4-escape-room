@@ -1,23 +1,6 @@
 <?php
-require_once('dbcon.php');
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$username = $_POST['username'];
-$password = $_POST['password'];
-$check_sql = "SELECT * FROM users WHERE username='$username'";
-$check_result = $db_connection->query($check_sql);
-    if ($check_result->num_rows > 0) {
-    echo "Gebruikersnaam is al in gebruik.";
-} else {
-    $hashed_password = password_hash ($password, PASSWORD_DEFAULT);
-    $insert_sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
-if ($db_connection->query($insert_sql) === TRUE) {
-    echo "Registratie succesvol!";
-} else {
-echo "Fout bij registratie: . $db_connection->errorr";
-        }
-    }
-}
+    include 'functions.php';
+register();
 ?>
 
 <!DOCTYPE html>
