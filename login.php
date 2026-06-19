@@ -17,7 +17,7 @@ login();
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Wachtwoord: </label><br>
         <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Inloggen</button>
+        <button type="submit" name='loginn'>Inloggen</button>
     </form>
 <br>
 <p>Nog geen account? <a href="register.php">Registreren</a></p>
