@@ -1,0 +1,122 @@
+/* general styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+/* Titel */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+/* nav knop */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    background: #707070;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #707070;
+}
+
+/* table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* table header */
+th {
+    background: #707070;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+/* table cells */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* Hover row */
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* buttons */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Wijzig knop */
+form[action*="update"] button {
+    background: #28a745;
+    color: white;
+}
+
+form[action*="update"] button:hover {
+    background: #218838;
+}
+
+/* verwijder knop */
+form[action*="delete"] button {
+    background: #dc3545;
+    color: white;
+}
+
+form[action*="delete"] button:hover {
+    background: #c82333;
+}
+
+/* Afbeeldingen */
+img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 3px;
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    nav a {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    }
+}
