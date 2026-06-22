@@ -1,0 +1,86 @@
+.account-wrap {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+.account-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.account-message {
+  background-color: rgba(255, 232, 168, 0.85);
+  border: 2px solid crimson;
+  color: rgb(168, 15, 46);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.account-card {
+  background-color: rgba(255, 232, 168, 0.9);
+  border: 2px solid crimson;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 25px;
+}
+
+.account-card h2 {
+  color: crimson;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.account-card p {
+  font-size: 20px;
+  color: rgb(60, 20, 20);
+  margin-bottom: 8px;
+}
+
+.account-card label {
+  font-size: 20px;
+  color: rgb(60, 20, 20);
+}
+
+.account-card select {
+  font-size: 18px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  border: 2px solid crimson;
+  background-color: white;
+  color: rgb(60, 20, 20);
+  font-family: "Grenze Gotisch", serif;
+}
+
+.account-btn {
+  background: none;
+  cursor: pointer;
+  font-family: "Grenze Gotisch", serif;
+  width: auto;
+  height: auto;
+  padding: 8px 18px;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-table th, .team-table td {
+  border: 1px solid crimson;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 18px;
+  color: rgb(60, 20, 20);
+}
+
+.team-table th {
+  background-color: crimson;
+  color: rgb(255, 232, 168);
+}
+
+.team-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
