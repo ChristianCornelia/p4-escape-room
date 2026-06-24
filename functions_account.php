@@ -24,7 +24,6 @@ function connectDb(){
     }
 }
 
-// Haal 1 gebruiker op via id
 function getUserById($conn, $id){
     $sql = "SELECT * FROM users WHERE id = :id";
     $query = $conn->prepare($sql);
@@ -32,7 +31,6 @@ function getUserById($conn, $id){
     return $query->fetch();
 }
 
-// Haal 1 team op via id
 function getTeamById($conn, $id){
     $sql = "SELECT * FROM teams WHERE id = :id";
     $query = $conn->prepare($sql);
@@ -40,7 +38,6 @@ function getTeamById($conn, $id){
     return $query->fetch();
 }
 
-// Haal alle teams op, gesorteerd op naam
 function getAllTeams($conn){
     $sql = "SELECT * FROM teams ORDER BY teamName ASC";
     $query = $conn->prepare($sql);
@@ -48,9 +45,7 @@ function getAllTeams($conn){
     return $query->fetchAll();
 }
 
-// Wijzig het team van een gebruiker. $teamId mag null zijn (geen team).
 function switchUserTeam($conn, $userId, $teamId){
-    // Als er een teamId is opgegeven, check of dat team bestaat
     if ($teamId !== null) {
         $team = getTeamById($conn, $teamId);
         if (!$team) {
@@ -66,5 +61,17 @@ function switchUserTeam($conn, $userId, $teamId){
     ]);
 
     return true;
+}
+
+function getStatusLabel($status){
+    switch ($status) {
+        case 'won':
+            return 'Gewonnen';
+        case 'lost':
+            return 'Verloren';
+        case 'in_progress':
+        default:
+            return 'Bezig';
+    }
 }
 ?>

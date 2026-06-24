@@ -95,7 +95,7 @@ $deadlineIso = ($team !== null && $current < count($riddles))
           <button type="submit">Submit</button>
         </form>
       <?php else : ?>
-        <p>You solved all the riddles! 🎉</p>
+        <p><a href="../">You solved all the riddles! 🎉</a></p>
       <?php endif; ?>
     </div>
   </div>

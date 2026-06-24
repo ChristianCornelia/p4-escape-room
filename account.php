@@ -15,11 +15,9 @@ $conn = connectDb();
 $userId = $_SESSION['user_id'];
 $message = '';
 
-// Verwerk team-wijziging
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_switch_team'])) {
     $newTeamId = $_POST['teamId'];
 
-    // Leeg veld betekent: geen team
     $newTeamId = ($newTeamId === '') ? null : (int)$newTeamId;
 
     if (switchUserTeam($conn, $userId, $newTeamId)) {
@@ -29,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_switch_team'])) {
     }
 }
 
-// Haal actuele gebruiker en alle teams op
 $user = getUserById($conn, $userId);
 $teams = getAllTeams($conn);
 ?>
@@ -73,7 +70,12 @@ $teams = getAllTeams($conn);
         <?php
           if ($user['teamId'] !== null) {
               $currentTeam = getTeamById($conn, $user['teamId']);
-              echo $currentTeam ? htmlspecialchars($currentTeam['teamName']) : 'Onbekend team';
+              if ($currentTeam) {
+                  echo htmlspecialchars($currentTeam['teamName']);
+                  echo ' (' . htmlspecialchars(getStatusLabel($currentTeam['status'])) . ')';
+              } else {
+                  echo 'Onbekend team';
+              }
           } else {
               echo 'Geen team';
           }
@@ -103,22 +105,30 @@ $teams = getAllTeams($conn);
       <?php if (count($teams) === 0): ?>
         <p>Er zijn nog geen teams aangemaakt.</p>
       <?php else: ?>
+        <div class="team-table-wrap">
         <table class="team-table">
           <tr>
             <th>Teamnaam</th>
+            <th>Status</th>
             <th>Starttijd</th>
+            <th>Room 1 gestart</th>
+            <th>Room 2 gestart</th>
             <th>Eindtijd</th>
             <th>Tijd (sec)</th>
           </tr>
           <?php foreach ($teams as $team): ?>
             <tr>
               <td><?php echo htmlspecialchars($team['teamName']); ?></td>
+              <td><?php echo htmlspecialchars(getStatusLabel($team['status'])); ?></td>
               <td><?php echo $team['startTime'] !== null ? htmlspecialchars($team['startTime']) : '-'; ?></td>
+              <td><?php echo $team['room1StartTime'] !== null ? htmlspecialchars($team['room1StartTime']) : '-'; ?></td>
+              <td><?php echo $team['room2StartTime'] !== null ? htmlspecialchars($team['room2StartTime']) : '-'; ?></td>
               <td><?php echo $team['finishTime'] !== null ? htmlspecialchars($team['finishTime']) : '-'; ?></td>
               <td><?php echo $team['completionTimeSeconds'] !== null ? htmlspecialchars($team['completionTimeSeconds']) : '-'; ?></td>
             </tr>
           <?php endforeach; ?>
         </table>
+        </div>
       <?php endif; ?>
     </section>
 
