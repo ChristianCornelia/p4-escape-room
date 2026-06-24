@@ -40,7 +40,7 @@
     <img src="images/parchment.png" class="img1">
     <h1 class="maintext">Welcome to Devil's Acre, the most dangerous slum in 1800s London...</h1>
     <a href="./rooms/room_1.php" class="room1">Enter ye...</a>
-    <a href="./rooms/room_2.php" class="room2">Enter ye...</a>
+    <a href="./rooms/room_2.php" class="room2">For presentation use only</a>
   </div>
 
   
