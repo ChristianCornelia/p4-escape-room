@@ -59,6 +59,37 @@ h1 {
   font-size: 46px;
 }
 
+.team-badge {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 10;
+  background-color: rgba(255, 232, 168, 0.92);
+  border: 2px solid crimson;
+  color: rgb(168, 15, 46);
+  font-size: 20px;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-shadow: none;
+}
+
+.timer-badge {
+  position: fixed;
+  top: 16px;
+  left: 24px;
+  z-index: 10;
+  background-color: rgba(255, 232, 168, 0.92);
+  border: 2px solid crimson;
+  color: rgb(168, 15, 46);
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-shadow: none;
+  min-width: 80px;
+  text-align: center;
+}
+
 .div1 {
   display: grid;
   place-items: center;

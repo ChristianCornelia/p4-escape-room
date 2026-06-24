@@ -15,8 +15,8 @@
         <div class=winscreen>
         <img class="cross" src="./images/cross.png" alt="">
         <h1>U heeft gewonnen!</h1>
-        <form class="toscore" action="scores.php">
-        <button >Naar scores</button>
+        <form class="toscore" action="account.php#list">
+        <button >Naar lijst</button>
         </form>
         </div>
     </main>

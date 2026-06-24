@@ -98,7 +98,7 @@ $teams = getAllTeams($conn);
       </form>
     </section>
 
-    <section class="account-card">
+    <section class="account-card" id="list">
       <h2>Alle teams</h2>
       <?php if (count($teams) === 0): ?>
         <p>Er zijn nog geen teams aangemaakt.</p>
