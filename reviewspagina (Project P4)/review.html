@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Klantreviews</h1>
+
+        <div class="review">
+            <div class="name">Jan de Vries</div>
+            <div class="stars">★★★★★</div>
+            <p>Geweldige service en snelle levering!</p>
+        </div>
+
+        <div class="review">
+            <div class="name">Sophie Jansen</div>
+            <div class="stars">★★★★☆</div>
+            <p>Mooi product, precies zoals beschreven.</p>
+        </div>
+
+        <h2>Laat een review achter</h2>
+
+        <form>
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" placeholder="Voer je naam in" required>
+
+            <label for="beoordeling">Beoordeling</label>
+            <select id="beoordeling" required>
+                <option value="">Kies aantal sterren</option>
+                <option>★★★★★ (5 sterren)</option>
+                <option>★★★★☆ (4 sterren)</option>
+                <option>★★★☆☆ (3 sterren)</option>
+                <option>★★☆☆☆ (2 sterren)</option>
+                <option>★☆☆☆☆ (1 ster)</option>
+            </select>
+
+            <label for="review">Review</label>
+            <textarea id="review" rows="5" placeholder="Schrijf hier je review..." required></textarea>
+
+            <button type="submit">Verstuur review</button>
+        </form>
+    </div>
+
+<script src="review.js"></script>
+</body>
+</html>
